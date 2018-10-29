@@ -37,8 +37,14 @@
       <div class="blog-main">
         <div class="swiper">
           <el-carousel height="300px" :interval="2000">
-            <el-carousel-item v-for="(item, index) in imgList" :key="index">
+            <!-- <el-carousel-item v-for="(item, index) in imgList" :key="index">
               <img :src="item.url" alt="" width="100%" height="100%">
+            </el-carousel-item> -->
+            <el-carousel-item>
+              <img src="../../static/swiper1.jpg" alt="" width="100%" height="100%">
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../../static/swiper2.jpg" alt="" width="100%" height="100%">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -67,7 +73,6 @@
 
 <script>
 import footer from './footer'
-
   export default {
     components: {
       'v-footer':footer
@@ -77,17 +82,7 @@ import footer from './footer'
         artList: [],
         size: '160px 160px',
         backImg: '',
-        titleImg: '',
-        imgList: [
-          {
-            id: 1,
-            url: '/static/swiper1.jpg'
-          },
-          {
-            id: 2,
-            url: '/static/swiper2.jpg'
-          }
-        ]
+        titleImg: ''
       }
     },
     methods: {

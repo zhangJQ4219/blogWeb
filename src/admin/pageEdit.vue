@@ -72,7 +72,7 @@
           url: '/editPage',
           data: this.formValidate
         }).then((res)=>{
-          
+          this.$router.push('/')
         })
       }
     },

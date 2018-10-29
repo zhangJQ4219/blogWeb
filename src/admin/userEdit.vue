@@ -1,15 +1,15 @@
 <template>
   <div class="">
     <Form ref="formValidate" :model="formValidate" :label-width="80">
-      <!-- <FormItem label="文本1" prop="textHeader">
-          <Input v-model="formValidate.textHeader"  style="width:240px"></Input>
+      <FormItem label="姓名" prop="name">
+          <Input v-model="formValidate.name"  style="width:240px"></Input>
       </FormItem>
-      <FormItem label="文本2" prop="textContent">
-          <Input v-model="formValidate.textContent"  style="width:240px"></Input>
+      <FormItem label="电话" prop="phone">
+          <Input v-model="formValidate.phone"  style="width:240px"></Input>
       </FormItem>
-      <FormItem label="文本3" prop="textfooter">
-          <Input v-model="formValidate.textfooter" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="想要说点什么..." style="width:240px"></Input>
-      </FormItem> -->
+      <FormItem label="职业" prop="profression">
+          <Input v-model="formValidate.profression" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="想要说点什么..." style="width:240px"></Input>
+      </FormItem>
       <FormItem label="图片" >
         <Upload action="/userinfo/upload"  
           :on-success="successUpload"
@@ -31,9 +31,9 @@
     data () {
       return {
         formValidate: {
-          textHeader: '',
-          textContent: '',
-          textfooter: '',
+          name: '',
+          phone: '',
+          profression: '',
           img: ''
         }
       }
@@ -65,6 +65,7 @@
           data: this.formValidate
         }).then((res)=>{
           this.$Message.success('Success!');
+          this.$router.push('/')
         })
       }
     },

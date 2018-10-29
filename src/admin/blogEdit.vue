@@ -87,6 +87,7 @@
               if (res.data.code === '200') {
                 this.$Message.success(res.data.msg);
                 this.$refs['formArticle'].resetFields();
+                this.$router.push('/')
               } else {
                 this.$Message.warning(res.data.msg);
               }
